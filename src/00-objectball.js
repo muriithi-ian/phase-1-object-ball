@@ -178,5 +178,20 @@ function shoeSize(playerName) {
 	}
 }
 
-console.log(shoeSize("Alan Anderson"));
+// console.log(shoeSize("Alan Anderson"));
 // console.log(gameObject()["home"].players["Alan Anderson"])
+
+function teamColors() {
+	const game = gameObject();
+	//create an array to hold the colors
+	let colors = [];
+	//iterate through game keys home and away
+	for (let key in game) {
+		//add colors to array
+		colors.push(game[key].colors);
+	}
+	//return array
+	return colors;
+}
+
+console.log(teamColors());
