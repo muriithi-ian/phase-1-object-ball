@@ -194,4 +194,19 @@ function teamColors() {
 	return colors;
 }
 
-console.log(teamColors());
+// console.log(teamColors());
+
+function teamNames() {
+	const game = gameObject();
+	//create an array to hold the colors
+	let names = [];
+	//iterate through game keys home and away
+	for (let key in game) {
+		//add names to array
+		names.push(game[key].teamName);
+	}
+	//return array
+	return names;
+}
+
+console.log(teamNames());
