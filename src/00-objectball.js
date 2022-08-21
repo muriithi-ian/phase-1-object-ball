@@ -209,4 +209,25 @@ function teamNames() {
 	return names;
 }
 
-console.log(teamNames());
+// console.log(teamNames());
+
+function playerNumbers(teamName) {
+	const game = gameObject();
+	//create an array to hold the colors
+	let playerNumber = [];
+	//iterate through game keys home and away
+	for (let key in game) {
+		if (game[key].teamName === teamName) {
+            //iterate through game[key] players
+            for (let player in game[key].players) {
+                //add player numbers to array
+                playerNumber.push(game[key].players[player].number);
+            }
+		}
+		//return array
+	}
+    return playerNumber;
+}
+
+// console.log(playerNumbers("Brooklyn Nets"));
+// console.log(playerNumbers("Charlotte Hornets"));
