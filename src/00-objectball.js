@@ -158,5 +158,25 @@ function numPointsScored(playerName) {
 	}
 }
 
-console.log(numPointsScored("Alan"));
-console.log(numPointsScored("Alan Anderson"));
+// console.log(numPointsScored("Alan"));
+// console.log(numPointsScored("Alan Anderson"));
+
+function shoeSize(playerName) {
+	// get game object
+	const game = gameObject();
+	//iterate through game keys home and away
+	for (let key in game) {
+		//iterate through game[key] players
+		for (let player in game[key].players) {
+			//if player name matches player name passed in
+			if (player === playerName) {
+				//return player points
+				return game[key].players[player].shoe;
+			}
+			return "Sorry, that player is not on the team.";
+		}
+	}
+}
+
+console.log(shoeSize("Alan Anderson"));
+// console.log(gameObject()["home"].players["Alan Anderson"])
