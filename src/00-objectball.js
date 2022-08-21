@@ -114,5 +114,49 @@ function gameObject() {
 		},
 	};
 }
+// console.log(gameObject())
 
-console.log(gameObject());
+// debugger;
+
+// function homeTeamName() {
+//     let object = gameObject();
+//     return object['home']['teamName']
+// }
+// console.log(homeTeamName());
+
+// let x=99;
+// let y=42;
+
+// debugger;
+// console.log('x: ', x);
+
+// let oo={foo: 42, bar: 83, 'key w/ spaces': true};
+
+// console.log(oo['foo']);
+// console.log(oo['key w/ spaces']);
+// function numPointsScored(){
+//     let namesScored= gameObject();
+//     return namesScored['players']['points']
+// }
+// console.log(numPointsScored("Brendan Haywood"))
+// console.log(gameObject());
+
+function numPointsScored(playerName) {
+	// get game object
+	const game = gameObject();
+	//iterate through game keys home and away
+	for (let key in game) {
+		//iterate through game[key] players
+		for (let player in game[key].players) {
+			//if player name matches player name passed in
+			if (player === playerName) {
+				//return player points
+				return game[key].players[player].points;
+			}
+			return "Sorry, that player is not on the team.";
+		}
+	}
+}
+
+console.log(numPointsScored("Alan"));
+console.log(numPointsScored("Alan Anderson"));
